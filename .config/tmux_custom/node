@@ -1,0 +1,8 @@
+neww 'vim'
+new-window -n server
+new-window -n commands
+new-window -n git
+previous-window
+previous-window
+previous-window
+
