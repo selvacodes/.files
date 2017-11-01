@@ -39,7 +39,7 @@
 *.color14: nord7
 *.color15: nord6
 
-Xcursor.theme: Breeze
+Xcursor.theme: Maia-Cursor
 Xcursor.size:                     0
 
 XTerm*background:                 #272827

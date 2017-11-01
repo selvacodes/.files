@@ -1,18 +1,1 @@
-shell 
-nano
-shellqq
-delete .rc.conf.swp
-touch test.txt
-open_with
-h
-mkdir tmux_custom
-touch node
-open_with vi
-
-options
-help 
-help
-q
-delete\
-delete
-open_with 
+vim

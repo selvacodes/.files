@@ -41,21 +41,11 @@ Plugin 'wincent/ferret'
 Plugin 'tpope/vim-unimpaired'
 
 "Plugin 'devjoe/vim-codequery'
-"full screen
-"Plugin 'wimproved.vim'
-
-" Comment
-
-" Flow
-
-" PureScript
-
 Plugin 'sheerun/vim-polyglot'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mitermayer/vim-prettier'
 Plugin 'flowtype/vim-flow'
 Plugin 'w0rp/ale'
-"Plugin 'calebsmith/vim-lambdify'
 
 Plugin 'leafgarland/typescript-vim'
 Plugin 'quramy/tsuquyomi'
@@ -248,7 +238,8 @@ nnoremap <SPACE> <Nop>
 nmap - :Explore<cr>
 nmap <leader>w :w!<cr>
 nmap <leader>W :wall!<cr>
-nmap <leader>q :bd<cr>
+nmap zz :bd<cr>
+nmap <leader>q :q<cr>
 
 " change colon
 map ; :

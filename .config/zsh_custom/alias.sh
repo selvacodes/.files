@@ -13,6 +13,7 @@ alias g=git
 alias v=vim
 alias vi=vim
 alias y=yarn
+alias r=ranger
 
 alias ga='git add'
 alias gap='git add -p'
