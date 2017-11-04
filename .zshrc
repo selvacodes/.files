@@ -56,6 +56,8 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH_CUSTOM_SCRIPT/alias.sh
 source $ZSH_CUSTOM_SCRIPT/autoload.sh
+source $ZSH_CUSTOM_SCRIPT/private.sh
+source $ZSH_CUSTOM_SCRIPT/key_bindings.sh
 source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
