@@ -54,6 +54,9 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'racer-rust/vim-racer'
 Plugin 'sebastianmarkow/deoplete-rust'
 
+" colorscheme
+Plugin 'dylanaraps/wal.vim'
+
 " haskell
 "Plugin 'dag/vim2hs'
 "Plugin 'eagletmt/ghcmod-vim'
@@ -178,7 +181,7 @@ syntax enable
 syntax on
 
 "colorscheme PaperColor
-colorscheme nord
+colorscheme wal
 let g:solarized_termtrans = 1
 let g:solarized_termcolors = 256
 set background=dark

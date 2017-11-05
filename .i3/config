@@ -61,7 +61,7 @@ bindsym $mod+F2 exec chromium
 bindsym $mod+F3 exec pcmanfm
 bindsym $mod+Shift+F3 exec gksu pcmanfm
 bindsym $mod+F4 exec ranger
-bindsym $mod+F5 exec termite -e 'mocp -m'
+bindsym $mod+F5 exec termite -e 'ncmpcpp'
 bindsym $mod+t exec --no-startup-id pkill compton
 bindsym $mod+Ctrl+t exec --no-startup-id compton -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
@@ -276,24 +276,28 @@ bindsym $mod+9 exec --no-startup-id blurlock
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b
-#exec --no-startup-id manjaro-hello
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
-#exec --no-startup-id pamac-tray
-exec --no-startup-id clipit
-exec --no-startup-id redshift
+exec --no-startup-id clipi
+#exec --no-startup-id redshift
 exec --no-startup-id tilda
-# exec --no-startup-id blueman
-# exec_always --no-startup-id sbxkb
-#exec --no-startup-id start_conky_maia
-exec --no-startup-id mocp -m
-# exec --no-startup-id start_conky_green
+exec --no-startup-id mpd
+exec --no-startup-id wal -Rt
 exec --no-startup-id xautolock -time 10 -locker blurlock
+# Brightness
+exec --no-startup-id  xbacklight -set 40
+
+exec --no-startup-id i3-msg 'workspace $ws2; exec /usr/bin/chromium'
+exec --no-startup-id i3-msg 'workspace $ws5; exec /usr/bin/ncmpcpp'
+
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
-# Brightness
-exec --no-startup-id  xbacklight -set 40
+#exec --no-startup-id pamac-tray
+# exec --no-startup-id blueman
+# exec_always --no-startup-id sbxkb
+#exec --no-startup-id start_conky_maia
+# exec --no-startup-id start_conky_green
 
 # Color palette used for the terminal ( ~/.extend.Xresources file )
 # Colors are gathered based on the documentation:
@@ -468,10 +472,21 @@ bindsym $mod+Control+g --release [class=".*"] border none
 
 #Audio mocp
 # This is awesome
-set $pause --no-startup-id mocp -G
-set $truepause --no-startup-id mocp -P
-set $next --no-startup-id mocp -f
-set $prev --no-startup-id mocp -r
+#set $pause --no-startup-id mocp -G
+#set $truepause --no-startup-id mocp -P
+#set $next --no-startup-id mocp -f
+#set $prev --no-startup-id mocp -r
+
+#set $music urxvt -e ncmpcpp
+set $pause --no-startup-id mpc toggle
+set $trupause --no-startup-id mpc pause
+set $next --no-startup-id mpc next
+set $prev --no-startup-id mpc prev
+#set $lilfor --no-startup-id mpc seek +10
+#set $bigfor --no-startup-id mpc seek +120
+#set $lilbak --no-startup-id mpc seek -10
+#set $bigbak --no-startup-id mpc seek -120
+#set $beg --no-startup-id mpc seek 0%
 
 bindsym $mod+less 		exec $prev
 bindsym $mod+p 		        exec $pause

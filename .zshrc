@@ -1,5 +1,4 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# If you come from bash you might have to change your $PATH.  # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
   export ZSH=/home/selva/.oh-my-zsh
@@ -60,6 +59,8 @@ source $ZSH_CUSTOM_SCRIPT/private.sh
 source $ZSH_CUSTOM_SCRIPT/key_bindings.sh
 source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+(wal -rt  &)
 
 # User configuration
 
