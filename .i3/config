@@ -4,8 +4,8 @@
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
 
-# set default desktop layout (default is tiling)
-# workspace_layout tabbed <stacking|tabbed>
+# Personalize
+# ############################################################################
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 new_window pixel 1
@@ -15,7 +15,6 @@ new_float normal
 hide_edge_borders none
 
 # change borders
-bindsym $mod+u border none
 bindsym $mod+y border pixel 1
 bindsym $mod+n border normal
 
@@ -26,6 +25,8 @@ font xft:Fira Code Retina 12
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
 
+# Major shortcuts
+# ############################################################################
 # start a terminal
 bindsym $mod+Return exec termite
 
@@ -38,26 +39,12 @@ bindsym $mod+d exec "rofi -show run"
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
 
-################################################################################################
-## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
-################################################################################################
-
-exec --no-startup-id volumeicon
-bindsym $mod+Ctrl+m exec termite -e 'alsamixer'
-#exec --no-startup-id pulseaudio
-#exec --no-startup-id pa-applet
-#bindsym $mod+Ctrl+m exec pavucontrol
-
-################################################################################################
-
-# Screen brightness controls
-# bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
-# bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
 
 # Start Applications
+# ############################################################################
 bindsym $mod+Ctrl+b exec termite -e 'bmenu'
 bindsym $mod+F1 exec --no-startup-id bash ~/.config/scripts/flash_win.sh
-bindsym $mod+F2 exec chromium
+bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec pcmanfm
 bindsym $mod+Shift+F3 exec gksu pcmanfm
 bindsym $mod+F4 exec ranger
@@ -70,27 +57,15 @@ bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
-# focus_follows_mouse no
-
+# Navigation
+# ############################################################################
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
 # move focused window
-#bindsym $mod+Shift+h move left
-#bindsym $mod+Shift+j move down
-#bindsym $mod+Shift+k move up
-#bindsym $mod+Shift+l move right
-
-# alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
@@ -127,6 +102,8 @@ bindsym $mod+Shift+s sticky toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
+# ScratchPad Configurations
+# ############################################################################
 # move the currently focused window to the scratchpad
 bindsym $mod+Shift+minus move scratchpad
 
@@ -134,16 +111,15 @@ bindsym $mod+Shift+minus move scratchpad
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym $mod+minus scratchpad show
 
+# Workspace Configurations
+# ############################################################################
 #navigate workspaces next / previous
 bindsym $mod+Shift+l workspace next
 bindsym $mod+Shift+h workspace prev
 
 # Workspace names
-# to display names or symbols instead of plain workspace numbers you can use
-# something like: set $ws1 1:mail
-#                 sset $ws2 2:
-set $ws1 "1:  "
-set $ws2 "2:  "
+set $ws1 1
+set $ws2 2
 set $ws3 3
 set $ws4 4
 set $ws5 5
@@ -181,13 +157,8 @@ bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
-# Open applications on specific workspaces
-# assign [class="Thunderbird"] $ws1
-# assign [class="Pale moon"] $ws2
-# assign [class="Pcmanfm"] $ws3
-# assign [class="Skype"] $ws5
-
-# Open specific applications in floating mode
+# App Configurations : Open specific applications in floating mode
+# ############################################################################
 for_window [title="alsamixer"] floating enable border pixel 1
 for_window [class="Calamares"] floating enable border normal
 for_window [class="Clipgrab"] floating enable
@@ -219,17 +190,19 @@ for_window [class="Xfburn"] floating enable
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
 
+# i3 config
+# ############################################################################
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+9 exec --no-startup-id blurlock # Lock screen
 
 
 # Set shut down, restart and locking features
+# ############################################################################
 bindsym $mod+0 mode "$mode_system"
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (Shift+s)uspend, (h)ibernate, (r)eboot, (s)hutdown
 mode "$mode_system" {
@@ -246,7 +219,11 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
 # Resize window (you can also use the mouse for that)
+# ############################################################################
 bindsym $mod+r mode "resize"
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -270,34 +247,20 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-# Lock screen
-bindsym $mod+9 exec --no-startup-id blurlock
 
 # Autostart applications
+# ############################################################################
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id clipi
-#exec --no-startup-id redshift
-exec --no-startup-id tilda
-exec --no-startup-id mpd
 exec --no-startup-id wal -Rt
 exec --no-startup-id xautolock -time 10 -locker blurlock
-# Brightness
-exec --no-startup-id  xbacklight -set 40
-
-exec --no-startup-id i3-msg 'workspace $ws2; exec /usr/bin/chromium'
-exec --no-startup-id i3-msg 'workspace $ws5; exec /usr/bin/ncmpcpp'
-
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
-
-#exec --no-startup-id pamac-tray
-# exec --no-startup-id blueman
-# exec_always --no-startup-id sbxkb
-#exec --no-startup-id start_conky_maia
-# exec --no-startup-id start_conky_green
+exec --no-startup-id  xbacklight -set 40 # Brightness
+# ############################################################################
 
 # Color palette used for the terminal ( ~/.extend.Xresources file )
 # Colors are gathered based on the documentation:
@@ -397,27 +360,26 @@ client.placeholder      $i3_color15 $i3_color17 $i3_color16 $i3_color15 $i3_colo
 
 client.background       $i3_background
 
-#############################
-### settings for i3-gaps: ###
-#############################
+# i3-gaps
+# ############################################################################
 
 # Set inner/outer gaps
 gaps inner 10
 gaps outer 5
 
-# Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
-# gaps inner|outer current|all set|plus|minus <px>
-# gaps inner all set 10
-# gaps outer all plus 5
-
 # Smart gaps (gaps used if only more than one container on the workspace)
-#smart_gaps on
+smart_gaps on
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace)
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
 smart_borders on
 
-# Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
+# Press $mod+Shift+g to enter the gap mode.
+# Choose o or i for modifying outer/inner gaps.
+# Press one of + / - (in-/decrement for current workspace)
+# or 0 (remove gaps for current workspace).
+# If you also press Shift with these keys, the change will be global for all workspaces.
+
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
 set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
@@ -455,48 +417,38 @@ mode "$mode_gaps_outer" {
 }
 
 
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
+#DropDown terminal
+################################################################################################
+exec --no-startup-id  "termite --name='dropdown' --class='dropdown'"
+
+for_window [class="dropdown"] floating enable border pixel 1
+for_window [class="dropdown"] move scratchpad
+for_window [class="dropdown"] resize set 625 400
+
+bindsym $mod+u [class="dropdown"] scratchpad show;[class="dropdown"] move position center;
+bindsym $mod+Shift+u resize shrink height 10px or 10ppt
+
+# System Settings
+################################################################################################
+
+## Sound-Section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
+################################################################################################
+
+bindsym $mod+Ctrl+m exec termite -e 'alsamixer'
+exec --no-startup-id pulseaudio
+exec --no-startup-id pa-applet
+#bindsym $mod+Ctrl+m exec pavucontrol
+#exec --no-startup-id volumeicon
+
+
+# Screen brightness controls
+################################################################################################
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 
-
-assign [class="Chromium"] $ws2
-bindsym $mod+F9 [class="Chromium"]  move workspace current
-bindsym $mod+F10 [class="Chromium"]  move workspace $ws2
-
-bindsym $mod+Control+g [class=".*"] border pixel 3
-bindsym $mod+Control+g --release [class=".*"] border none
-
-#Audio mocp
-# This is awesome
-#set $pause --no-startup-id mocp -G
-#set $truepause --no-startup-id mocp -P
-#set $next --no-startup-id mocp -f
-#set $prev --no-startup-id mocp -r
-
-#set $music urxvt -e ncmpcpp
-set $pause --no-startup-id mpc toggle
-set $trupause --no-startup-id mpc pause
-set $next --no-startup-id mpc next
-set $prev --no-startup-id mpc prev
-#set $lilfor --no-startup-id mpc seek +10
-#set $bigfor --no-startup-id mpc seek +120
-#set $lilbak --no-startup-id mpc seek -10
-#set $bigbak --no-startup-id mpc seek -120
-#set $beg --no-startup-id mpc seek 0%
-
-bindsym $mod+less 		exec $prev
-bindsym $mod+p 		        exec $pause
-bindsym $mod+greater		exec $next
-#set $lilfor --no-startup-id mocp -k 10
-#set $bigfor --no-startup-id mocp -k 120
-#set $lilbak --no-startup-id mocp -k -10
-#set $bigbak --no-startup-id mocp -k -120
-
-
-
-
-
+################################################################################################
