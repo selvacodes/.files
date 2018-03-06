@@ -61,3 +61,12 @@ nmap <C-l> :bnext<CR>
 
 " Move to the previous buffer
 nmap <C-h> :bprevious<CR>
+
+" => Language Servers
+"""""""""""""""""""""
+nnoremap <silent> gd :call LanguageClient_textDocument_definition()<cr>
+nnoremap <silent> gf :call LanguageClient_textDocument_formatting()<cr>
+nnoremap <silent> <cr> :call LanguageClient_textDocument_hover()<cr>
+nnoremap <silent> gr :call LanguageClient_textDocument_rename()<cr>
+nnoremap <silent> gs :call LanguageClient_textDocument_documentSymbol()<cr>
+

@@ -31,3 +31,8 @@ endif
 set colorcolumn=80
 autocmd FileType reason set colorcolumn=100
 autocmd FileType javascript set colorcolumn=80
+
+highlight clear ALEErrorSign
+highlight clear ALEWarningSign
+highlight clear SignColumn 
+let g:ale_change_sign_column_color = 1
