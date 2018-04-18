@@ -2,8 +2,8 @@
 export PATH=$HOME/bin:/usr/local/bin:/$HOME/.nix-profile/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/selva.g/.oh-my-zsh
-export ZSH_CUSTOM_SCRIPT=/Users/selva.g/.config/zsh_custom
+export ZSH=$HOME/.oh-my-zsh
+export ZSH_CUSTOM_SCRIPT=$HOME/.config/zsh_custom
 export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
 
 # Set name of the theme to load. Optionally, if you set this to "random"
@@ -101,6 +101,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-. /Users/selva.g/.nix-profile/etc/profile.d/nix.sh
+. $HOME/.nix-profile/etc/profile.d/nix.sh
 #autoload -U promptinit; promptinit
 #prompt pure
