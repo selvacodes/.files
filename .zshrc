@@ -1,13 +1,22 @@
-# If you come from bash you might have to change your $PATH.  # export PATH=$HOME/bin:/usr/local/bin:$PATH
+# If you come from bash you might have to change your $PATH.
+export PATH=$HOME/bin:/usr/local/bin:/$HOME/.nix-profile/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/selva/.oh-my-zsh
-  export ZSH_CUSTOM_SCRIPT=/home/selva/.config/zsh_custom
+export ZSH=/Users/selva.g/.oh-my-zsh
+export ZSH_CUSTOM_SCRIPT=/Users/selva.g/.config/zsh_custom
+export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="robbyrussell"
+
+# Set list of themes to load
+# Setting this variable when ZSH_THEME=random
+# cause zsh load theme from this variable instead of
+# looking in ~/.oh-my-zsh/themes/
+# An empty array have no effect
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -51,16 +60,16 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-nix-shell)
 
 source $ZSH_CUSTOM_SCRIPT/alias.sh
 source $ZSH_CUSTOM_SCRIPT/autoload.sh
-source $ZSH_CUSTOM_SCRIPT/private.sh
+#source $ZSH_CUSTOM_SCRIPT/private.sh
 source $ZSH_CUSTOM_SCRIPT/key_bindings.sh
 source $ZSH/oh-my-zsh.sh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-(wal -rt  &)
+# Only load Liquid Prompt in interactive shells, not from a script or from scp
+[[ $- = *i* ]] && source ~/liquidprompt/liquidprompt
 
 # User configuration
 
@@ -90,3 +99,8 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+. /Users/selva.g/.nix-profile/etc/profile.d/nix.sh
+#autoload -U promptinit; promptinit
+#prompt pure
