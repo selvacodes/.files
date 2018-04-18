@@ -4,14 +4,16 @@ set -euo pipefail
 #echo "Installing Homebrew"
 #/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+#echo "oh my zsh"
 #sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
+#echo "Liquid prompt"
 #cd
 #rm -rf liquidprompt
 #git clone https://github.com/nojhan/liquidprompt.git
 #source liquidprompt/liquidprompt
 
-echo "Installing global Homebrew packages"
+#echo "Moving stuff"
 
 cd 
 
@@ -27,45 +29,44 @@ cp ~/.files/.zshrc ~
 
 cp ~/.files/.tmux.conf ~
 
-homebrew_packages=(
- #"exa"
- #"fasd"
- #"fzf"
- #"git-town"
- #"netcat"
- #"openconnect"
- #"ranger"
- #"ripgrep"
- #"the_silver_searcher"
- #"tig"
- #"tmux"
- #"vim"
- #"w3m"
- #"yarn"
- #"zsh"
- "zsh-completions"
- "zsh-syntax-highlighting"
- "koekeishiya/formulae/kwm"
- )
-for homebrew_package in "${homebrew_packages[@]}"; do
-	brew install "$homebrew_package"
-done
+#echo "Installing global Homebrew packages"
+
+#homebrew_packages=(
+ ##"exa"
+ ##"fasd"
+ ##"fzf"
+ ##"git-town"
+ ##"netcat"
+ ##"openconnect"
+ ##"ranger"
+ ##"ripgrep"
+ ##"the_silver_searcher"
+ ##"tig"
+ ##"tmux"
+ ##"vim"
+ ##"w3m"
+ ##"yarn"
+ ##"zsh"
+ #"zsh-completions"
+ #"zsh-syntax-highlighting"
+ #"koekeishiya/formulae/kwm"
+ #)
+#for homebrew_package in "${homebrew_packages[@]}"; do
+	#brew install "$homebrew_package"
+#done
 
 
 echo "Installing Homebrew cask apps and fonts"
 brew tap caskroom/fonts
 homebrew_cask_packages=(
-	"font-fira-mono"
-	"font-iosevka"
-	"font-iosevka-nerd-font"
-	"font-iosevka-nerd-font-mono"
+	#"font-fira-mono"
+	#"font-iosevka"
+	#"font-iosevka-nerd-font"
+	#"font-iosevka-nerd-font-mono"
 	"iterm2"
-	"keepingyouawake"
-	"google-chrome"
-	"firefox"
-	"spotify"
-	"slack"
-	"zoomus"
+	#"keepingyouawake"
+	#"google-chrome"
+	#"firefox"
 )
 for homebrew_cask_package in "${homebrew_cask_packages[@]}"; do
 	brew cask install "$homebrew_cask_package"
