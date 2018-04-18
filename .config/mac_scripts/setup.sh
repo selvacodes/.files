@@ -1,13 +1,14 @@
 #!/bin/bash
 set -euo pipefail
 
-echo "Installing Homebrew"
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+#echo "Installing Homebrew"
+#/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+#sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 echo "Installing global Homebrew packages"
-brew bundle
 
-cd ~
+cd 
 
 rm -rf ~/.config
 
@@ -15,13 +16,14 @@ cp -rf ~/.files/.config ~
 
 cp ~/.config/mac_scripts/Brewfile ~
 
-cp ~/.config/.vimrc ~
+cp ~/.files/.vimrc ~
 
-cp ~/.config/.zshrc ~
+cp ~/.files/.zshrc ~
 
-cp ~/.config/.tmux.conf ~
+cp ~/.files/.tmux.conf ~
 
 cd
+rm -rf liquidprompt
 git clone https://github.com/nojhan/liquidprompt.git
 source liquidprompt/liquidprompt
 
@@ -31,4 +33,7 @@ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo "Installing Vim plugins"
 vim +PlugInstall +qall
+
+brew bundle
+
 
