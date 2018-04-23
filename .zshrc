@@ -1,15 +1,23 @@
-# If you come from bash you might have to change your $PATH.
+#
+# User configuration sourced by interactive shells
+#
+
+# Change default zim location
+export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
+
+# Start zim
+[[ -s ${ZIM_HOME}/init.zsh ]] && source ${ZIM_HOME}/init.zsh
 export PATH=$HOME/bin:/usr/local/bin:/$HOME/.nix-profile/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+#export ZSH=$HOME/.oh-my-zsh
 export ZSH_CUSTOM_SCRIPT=$HOME/.config/zsh_custom
-export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
+#export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+#ZSH_THEME="robbyrussell"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -60,19 +68,19 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-nix-shell)
+#plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-nix-shell)
 
 source $ZSH_CUSTOM_SCRIPT/alias.sh
 source $ZSH_CUSTOM_SCRIPT/autoload.sh
-#source $ZSH_CUSTOM_SCRIPT/private.sh
 source $ZSH_CUSTOM_SCRIPT/key_bindings.sh
-source $ZSH/oh-my-zsh.sh
+
+#source $ZSH_CUSTOM_SCRIPT/private.sh
+#source $ZSH/oh-my-zsh.sh
 
 # Only load Liquid Prompt in interactive shells, not from a script or from scp
 [[ $- = *i* ]] && source ~/liquidprompt/liquidprompt
 
 # User configuration
-
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
