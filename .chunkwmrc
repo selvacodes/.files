@@ -22,17 +22,15 @@ chunkc core::unload border.so
 #
 
 chunkc set global_desktop_mode           bsp
-chunkc set 2_desktop_mode                monocle
-chunkc set 5_desktop_mode                float
 
-chunkc set global_desktop_offset_top     1
-chunkc set global_desktop_offset_bottom  1
+chunkc set global_desktop_offset_top     4
+chunkc set global_desktop_offset_bottom  4
 chunkc set global_desktop_offset_left    4
 chunkc set global_desktop_offset_right   4
 chunkc set global_desktop_offset_gap     4
 
 chunkc set desktop_padding_step_size     10.0
-chunkc set desktop_gap_step_size         5.0
+chunkc set desktop_gap_step_size         20.0
 
 chunkc set bsp_spawn_left                1
 chunkc set bsp_optimal_ratio             1.618
@@ -53,7 +51,7 @@ chunkc set preselect_border_color        0xffd75f5f
 chunkc set preselect_border_width        1
 chunkc set preselect_border_radius       0
 
-chunkc set focused_border_color          0xff0f6288
+chunkc set focused_border_color          0xffd75f5f
 chunkc set focused_border_width          2
 chunkc set focused_border_radius         2
 chunkc set focused_border_skip_floating  0
@@ -67,6 +65,6 @@ chunkc core::load border.so
 chunkc core::load tiling.so
 chunkc core::load ffm.so
 
-chunkc tiling::rule --owner Finder --name Copy --state float
+#chunkc tiling::rule --owner Finder --name Copy --state float
 chunkc tiling::rule --owner \"App Store\" --state float
-chunkc tiling::rule --owner Emacs --except "^$" --state tile
+#chunkc tiling::rule --owner Emacs --except "^$" --state tile
