@@ -7,7 +7,8 @@ export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
 
 # Start zim
 [[ -s ${ZIM_HOME}/init.zsh ]] && source ${ZIM_HOME}/init.zsh
-export PATH=$HOME/bin:/usr/local/bin:/$HOME/.nix-profile/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/lib/node_modules:$PATH
+#/$HOME/.nix-profile/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 #export ZSH=$HOME/.oh-my-zsh
@@ -81,6 +82,7 @@ source $ZSH_CUSTOM_SCRIPT/key_bindings.sh
 [[ $- = *i* ]] && source ~/liquidprompt/liquidprompt
 
 # User configuration
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -109,6 +111,6 @@ source $ZSH_CUSTOM_SCRIPT/key_bindings.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-. $HOME/.nix-profile/etc/profile.d/nix.sh
+#. $HOME/.nix-profile/etc/profile.d/nix.sh
 #autoload -U promptinit; promptinit
 #prompt pure
