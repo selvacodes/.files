@@ -1,7 +1,7 @@
 """"""""""""""
 " => Airline
 """"""""""""""
-set guifont=FiraCode:h11:cDEFAULT
+set guifont=Iosevka:h11:cDEFAULT
 autocmd GUIEnter * silent! :WCenter 100
 
 let g:airline#extensions#tabline#enabled = 0
