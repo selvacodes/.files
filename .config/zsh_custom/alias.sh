@@ -57,5 +57,5 @@ alias tks="tmux kill-session"
 #dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
-
+alias vclean=$HOME/.config/scripts/swp_clean.sh
 

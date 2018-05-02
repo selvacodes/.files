@@ -2,6 +2,7 @@
 set -euo pipefail
 
 #sh settings.sh
+#sh settings.sh
 
 sh moveconfig.sh
 
