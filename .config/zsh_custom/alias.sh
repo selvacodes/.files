@@ -51,11 +51,12 @@ export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1
 
 
 # tmux alias
-alias tnt="tmux new-session 'tmux source-file ~/.config/tmux_custom/node'"
+alias tnt="tmux new-session 'tmux source-file ~/.config/tmux_custom/launch_node.sh'"
 alias tks="tmux kill-session"
 
 #dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
-alias vclean=$HOME/.config/scripts/swp_clean.sh
+alias vclean='find . -type f -name "*.sw[klmnop]" -delete'
+
 

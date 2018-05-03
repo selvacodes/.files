@@ -47,6 +47,12 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 Plug 'mattesgroeger/vim-bookmarks'
 
+Plug 'andreypopp/vim-colors-plain'
+
+Plug 'hickop/vim-hickop-colors'
+
+
+
 call plug#end()
 
 source ~/.config/vim/generalVimrc

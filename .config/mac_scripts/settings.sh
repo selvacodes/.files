@@ -18,10 +18,10 @@ defaults write com.apple.dock show-process-indicators -bool true
 defaults write com.apple.Dock autohide -bool TRUE;
 
 # Set a blazingly fast keyboard repeat rate
-defaults write NSGlobalDomain KeyRepeat -int 1
+#defaults write NSGlobalDomain KeyRepeat -int 1 
 
 # Set a shorter Delay until key repeat
-defaults write NSGlobalDomain InitialKeyRepeat -int 15
+#defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
 # Show the ~/Library folder
 chflags nohidden ~/Library
