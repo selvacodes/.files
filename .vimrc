@@ -39,19 +39,13 @@ Plug 'MartinLafreniere/vim-PairTools'
 
 Plug 'reasonml-editor/vim-reason-plus'
 
-Plug 'arcticicestudio/nord-vim'
-
-Plug 'chriskempson/base16-vim' 
-
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 Plug 'mattesgroeger/vim-bookmarks'
 
+"Plug 'chriskempson/base16-vim' 
+
 Plug 'andreypopp/vim-colors-plain'
-
-Plug 'hickop/vim-hickop-colors'
-
-
 
 call plug#end()
 
