@@ -8,23 +8,23 @@ fi
 echo " → Installing global Homebrew packages"
 
 homebrew_packages=(
- #"ranger"
- #"tree"
- #"exa"
- #"fasd"
- #"fzf"
- #"curl"
- #"ripgrep"
- #"the_silver_searcher"
- #"tmux"
- #"vim"
- #"node"
- #"yarn"
- #"zsh"
- #"zsh-completions"
- #"zsh-syntax-highlighting"
- #"chunkwm"
- #"koekeishiya/formulae/kwm"
+ "ranger"
+ "tree"
+ "exa"
+ "fasd"
+ "fzf"
+ "curl"
+ "ripgrep"
+ "the_silver_searcher"
+ "tmux"
+ "vim"
+ "node"
+ "yarn"
+ "zsh"
+ "zsh-completions"
+ "zsh-syntax-highlighting"
+ "chunkwm"
+ "koekeishiya/formulae/kwm"
  )
 for homebrew_package in "${homebrew_packages[@]}"; do
         brew install "$homebrew_package"
@@ -40,11 +40,11 @@ brew tap caskroom/cask
 brew tap caskroom/fonts
 
 homebrew_cask_packages=(
-	#"font-fira-mono"
-	#"font-iosevka"
-	#"keepingyouawake"
-	#"google-chrome"
-	#"firefox"
+        "font-fira-mono"
+        "font-iosevka"
+        "keepingyouawake"
+        "google-chrome"
+        "firefox"
 )
 for homebrew_cask_package in "${homebrew_cask_packages[@]}"; do
 	brew cask install "$homebrew_cask_package"
