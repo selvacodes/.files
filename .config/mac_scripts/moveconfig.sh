@@ -11,13 +11,15 @@ link_files () {
 
 cd 
 
-rm .vimrc .zshrc .tmux.conf .zimrc .chunkwmrc
+rm .vimrc .zshrc .tmux.conf .zimrc .chunkwmrc .skhdrc
 
 rm -rf $HOME/config
 
 cp -rf $HOME/.files/.config $HOME/
 
 link_files $HOME/.files/.chunkwmrc $HOME/.chunkwmrc
+
+link_files $HOME/.files/.skhdrc $HOME/.skhdrc
 
 link_files $HOME/.files/.vimrc $HOME/.vimrc
 
@@ -26,3 +28,4 @@ link_files $HOME/.files/.zimrc $HOME/.zimrc
 link_files $HOME/.files/.zshrc $HOME/.zshrc
 
 link_files $HOME/.files/.tmux.conf $HOME/.tmux.conf
+
