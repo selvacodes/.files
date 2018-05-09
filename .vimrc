@@ -43,7 +43,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 Plug 'mattesgroeger/vim-bookmarks'
 
-"Plug 'chriskempson/base16-vim' 
+Plug 'wakatime/vim-wakatime'
 
 Plug 'andreypopp/vim-colors-plain'
 
