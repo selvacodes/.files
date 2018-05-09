@@ -51,7 +51,7 @@ export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1
 
 
 # tmux alias
-alias tnt="tmux new-session 'tmux source-file ~/.config/tmux_custom/launch_node.sh'"
+alias tnt="sh ~/.config/tmux_custom/launch_node.sh"
 alias tks="tmux kill-session"
 
 #dotfiles
